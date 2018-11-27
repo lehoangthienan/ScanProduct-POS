@@ -32,6 +32,7 @@ class ScanProductActivity : AppCompatActivity(), BarcodeReader.BarcodeReaderList
             val intent = Intent(this, ProductDetailActivity::class.java)
             intent.putExtra("id", sparseArray[0].displayValue)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
     }
@@ -48,4 +49,8 @@ class ScanProductActivity : AppCompatActivity(), BarcodeReader.BarcodeReaderList
         Toast.makeText(this@ScanProductActivity, "Error occurred while scanning", Toast.LENGTH_SHORT).show();
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
 }

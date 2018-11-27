@@ -62,6 +62,11 @@ class ShowProductsActivity : AppCompatActivity() {
         }
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
+
     private fun startScanActivity() {
         val intent = Intent(this, IntroScanActivity::class.java)
         startActivity(intent)
