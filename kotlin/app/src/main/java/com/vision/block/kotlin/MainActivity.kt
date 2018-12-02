@@ -2,17 +2,11 @@ package com.vision.block.kotlin
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.ActionBar
-import android.util.Log
-import com.facebook.FacebookSdk
-import com.facebook.appevents.AppEventsLogger
-import com.vision.block.kotlin.view.showproducts.ShowProductsActivity
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
+import android.support.v7.app.AppCompatActivity
+import com.vision.block.kotlin.view.scan.IntroScanActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,8 +27,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startSalesManagerActivity() {
-        val intent = Intent(this, ShowProductsActivity::class.java)
+        val intent = Intent(this, IntroScanActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         finish()
     }
 

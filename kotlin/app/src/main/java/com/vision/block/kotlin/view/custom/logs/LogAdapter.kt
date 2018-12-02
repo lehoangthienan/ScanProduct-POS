@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.vision.block.kotlin.R
 import com.vision.block.kotlin.data.response.Log
 
-class LogAdapter (
+class LogAdapter(
     private var logs: ArrayList<Log>
 ) : RecyclerView.Adapter<LogViewHolder>() {
     private lateinit var context: Context
@@ -24,7 +24,7 @@ class LogAdapter (
 
     override fun onBindViewHolder(holder: LogViewHolder, position: Int) {
         holder.bindData(
-            logs[logs.size - position - 1]
+            logs[position]
         )
     }
 }
